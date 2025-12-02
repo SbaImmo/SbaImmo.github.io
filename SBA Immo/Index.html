@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBA Immo SA – Votre partenaire immobilier de confiance à Martigny</title>
+    <meta name="description" content="SBA Immo SA – Votre partenaire immobilier de confiance à Martigny depuis plus de 15 ans.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root{--p:#1b3358;--s:#0f213d;--a:#d4af37;--l:#f9f9fb;--g:#555;--t:#222}
+        *,*::before,*::after{box-sizing:border-box}
+        body{margin:0;font-family:'Inter',sans-serif;line-height:1.6;color:var(--t);background:#fff}
+        h1,h2,h3{font-weight:700;margin:0}
+        a{text-decoration:none;color:inherit}
+        img{max-width:100%;display:block;border-radius:18px}
+        header{position:fixed;top:0;left:0;right:0;background:var(--p);color:#fff;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.12)}
+        nav{max-width:1400px;margin:0 auto;padding:0.9rem 5%;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:1.9rem;font-weight:800}
+        .logo span{color:var(--a)}
+        .nav-links{display:flex;gap:2.8rem}
+        .nav-links a{font-weight:500;transition:.3s}
+        .nav-links a:hover{color:var(--a)}
+        .burger{display:none;font-size:1.8rem;cursor:pointer}
+
+        .hero{height:100vh;min-height:580px;background:linear-gradient(rgba(27,51,88,.92),rgba(27,51,88,.95)),url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 5%}
+        .hero h1{font-size:clamp(2.4rem,8vw,4.5rem);margin-bottom:0.4rem}
+        .hero .slogan{font-size:clamp(1.1rem,4vw,1.4rem);max-width:820px;margin:0 auto 2rem;opacity:.95;font-weight:500}
+        .btn{display:inline-block;background:var(--a);color:#111;padding:14px 36px;border-radius:50px;font-weight:600;transition:all .35s}
+        .btn:hover{background:#fff;transform:translateY(-4px)}
+
+        main{margin-top:68px}
+        section{padding:90px 5%;max-width:1400px;margin:0 auto}
+        .section-title{text-align:center;font-size:clamp(2rem,6vw,2.8rem);color:var(--p);margin-bottom:3.5rem;position:relative}
+        .section-title::after{content:'';width:80px;height:4px;background:var(--a);position:absolute;bottom:-16px;left:50%;transform:translateX(-50%)}
+
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .about-img img{box-shadow:0 15px 40px rgba(0,0,0,.15)}
+        .about-text h2{font-size:clamp(1.8rem,5vw,2.4rem);color:var(--p);margin-bottom:1.2rem}
+        .about-text p{font-size:1.08rem;color:var(#g);margin-bottom:1.2rem}
+
+        .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:2rem}
+        .service-card{background:#fff;padding:2.6rem 1.8rem;border-radius:18px;text-align:center;box-shadow:0 12px 35px rgba(0,0,0,.09);transition:.4s}
+        .service-card:hover{transform:translateY(-12px)}
+        .service-card i{font-size:3.2rem;color:var(--a);margin-bottom:1.3rem}
+        .service-card h3{font-size:1.35rem;margin-bottom:0.9rem;color:var(--p)}
+
+        .vision{background:var(--l);text-align:center;padding:90px 5%}
+        .vision p{font-size:1.25rem;max-width:900px;margin:0 auto;color:var(--g);line-height:1.85}
+
+        .contact-section{background:var(--s);color:#fff;padding:90px 5%;text-align:center}
+        .contact-info{max-width:680px;margin:2.5rem auto 0}
+        .contact-info h3{font-size:1.6rem;margin-bottom:1.6rem;color:var(--a)}
+        .contact-info p{margin-bottom:0.9rem;font-size:1.06rem}
+        .contact-info i{color:var(--a);margin-right:12px;width:22px}
+        .contact-info a{color:var(--a)}
+        .contact-info .company-name{font-size:1.28rem;font-weight:600;margin:1rem 0 0.8rem;color:#fff}
+
+        footer{background:#111;color:#aaa;text-align:center;padding:2.5rem 5%;font-size:.94rem;line-height:1.7}
+
+        /* ==================== MOBILE ==================== */
+        @media (max-width: 900px) {
+            .burger{display:block}
+            nav{padding:0.8rem 5%}
+            .nav-links{position:absolute;top:100%;left:0;width:100%;background:var(--p);flex-direction:column;max-height:0;overflow:hidden;transition:max-height .4s ease}
+            .nav-links a{padding:1rem 0;text-align:center;border-bottom:1px solid rgba(255,255,255,.1)}
+            .nav-links.active{max-height:400px}
+
+            main{margin-top:62px}
+            section{padding:60px 6%}
+            .hero{min-height:520px;padding:0 6%}
+            .hero h1{font-size:clamp(2.2rem,9vw,3.8rem)}
+            .hero .slogan{font-size:1.15rem;margin-bottom:1.8rem}
+
+            .about-grid{grid-template-columns:1fr;gap:2.5rem}
+            .about-img{display:none}
+
+            .services{gap:1.6rem}
+            .service-card{padding:2.2rem 1.4rem}
+            .service-card i{font-size:2.9rem}
+
+            .vision{padding:65px 6%}
+            .contact-section{padding:65px 6%}
+
+            .section-title{margin-bottom:3rem}
+            .section-title::after{bottom:-12px}
+        }
+
+        @media (max-width: 480px) {
+            section{padding:50px 7%}
+            .vision,.contact-section{padding:55px 7%}
+            .hero{min-height:480px}
+            .btn{padding:13px 32px;font-size:0.95rem}
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">SBA <span>Immo</span> SA</div>
+        <div class="burger" onclick="document.getElementById('nav').classList.toggle('active')">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links" id="nav">
+            <a href="#accueil">Accueil</a>
+            <a href="#apropos">À propos</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero" id="accueil">
+    <div>
+        <h1>SBA Immo SA</h1>
+        <p class="slogan">Votre partenaire immobilier de confiance à Martigny</p>
+        <a href="#contact" class="btn">Nous contacter</a>
+    </div>
+</section>
+
+<main>
+    <section id="apropos">
+        <h2 class="section-title">À propos de nous</h2>
+        <div class="about-grid">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" alt="Équipe SBA Immo SA">
+            </div>
+            <div class="about-text">
+                <h2>Une expertise reconnue en Valais</h2>
+                <p>SBA Immo SA, basée à Martigny, est active depuis plus de 15 ans dans tous les domaines de l’immobilier.</p>
+                <p>Grâce à une structure solide, une expérience approfondie et un réseau local puissant, nous accompagnons propriétaires, investisseurs privés et institutionnels ainsi qu’entreprises dans la réalisation de leurs projets immobiliers.</p>
+                <p>Notre force : une approche globale, réactive et entièrement sur mesure.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">Nos domaines d’activité</h2>
+        <div class="services">
+            <div class="service-card"><i class="fas fa-home"></i><h3>Achat & Vente</h3><p>Maisons, appartements, terrains et immeubles de rendement</p></div>
+            <div class="service-card"><i class="fas fa-building"></i><h3>Promotion immobilière</h3><p>Développement de projets résidentiels et commerciaux</p></div>
+            <div class="service-card"><i class="fas fa-handshake"></i><h3>Gestion de projets tiers</h3><p>Administration complète pour investisseurs</p></div>
+            <div class="service-card"><i class="fas fa-key"></i><h3>Location & Courtage</h3><p>Mise en location et recherche de locataires</p></div>
+        </div>
+    </section>
+
+    <section class="vision">
+        <h2 class="section-title">Notre vision</h2>
+        <p>Offrir une approche globale, flexible et personnalisée de l’immobilier. Créer de la valeur durable pour nos clients en proposant des solutions adaptées à chaque situation – acquisition, gestion ou valorisation de patrimoine.</p>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2 class="section-title" style="color:white">Contactez-nous</h2>
+        <div class="contact-info">
+            <h3>Coordonnées</h3>
+            <p class="company-name">SBA Immo SA</p>
+            <p><i class="fas fa-map-marker-alt"></i> Rue de l’Ancienne-Pointe 16<br>1920 Martigny</p>
+            <p><i class="fas fa-id-card"></i> UID : CHE-101.805.685</p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+41799300789">+41 79 930 07 89</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:info@sba-immo.ch">info@sba-immo.ch</a></p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    © 2025 SBA Immo SA – Tous droits réservés<br>    
+</footer>
+
+<script>
+    document.addEventListener('click', function(e) {
+        const nav = document.getElementById('nav');
+        if (!e.target.closest('nav')) nav.classList.remove('active');
+    });
+</script>
+</body>
+</html>
